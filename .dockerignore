@@ -1,0 +1,6 @@
+persist/
+node_modules/
+config.json
+session.json
+yarn-error.log
+.idea
