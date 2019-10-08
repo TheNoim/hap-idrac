@@ -18,7 +18,7 @@ before_script:
   - /opt/riotkit/utils/bin/setup-travis-arm-builds
   - docker run --rm --privileged docker/binfmt:820fdd95a9972a5308930a2bdfb8573dd4447ad3
   - sudo systemctl restart docker
-  - docker buildx create --name mybuilder --platform linux/amd64,linux/arm64,linux/arm/v7,linux/arm
+  - docker buildx create --name mybuilder --platform linux/amd64,linux/arm64,linux/arm/v7
   - docker buildx use mybuilder
   - docker buildx inspect --bootstrap
 script:
@@ -26,7 +26,7 @@ script:
   - >
     if [ "$TRAVIS_BRANCH" == "master" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
       echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-      docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7,linux/arm -t noim/idrac6-hap:latest --push .
+      docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7 -t noim/idrac6-hap:latest --push .
     else
-      docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7,linux/arm -t noim/idrac6-hap:latest .
+      docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7 -t noim/idrac6-hap:latest .
     fi
