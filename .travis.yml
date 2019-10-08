@@ -16,7 +16,7 @@ before_script:
 
   # activate ARM builds on travis
   - /opt/riotkit/utils/bin/setup-travis-arm-builds
-  - sudo apt-get install qemu-user-static
+  - sudo systemctl restart docker
   - docker buildx create --name mybuilder
   - docker buildx use mybuilder
   - docker buildx inspect --bootstrap
