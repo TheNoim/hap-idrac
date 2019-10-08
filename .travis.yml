@@ -10,7 +10,7 @@ script:
   # push image
   - >
     if [ "$TRAVIS_BRANCH" == "master" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
-      docker login -u="$DOCKER_USER" -p="$DOCKER_PASS"
+      echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
       docker tag noim/idrac6-hap noim/idrac6-hap:latest
       docker push noim/idrac6-hap:latest
       docker push noim/idrac6-hap
