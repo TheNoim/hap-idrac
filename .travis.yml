@@ -17,12 +17,12 @@ before_script:
   # activate ARM builds on travis
   - /opt/riotkit/utils/bin/setup-travis-arm-builds
   - sudo systemctl restart docker
-  - docker buildx create --name mybuilder
+  - docker buildx create --name mybuilder --platform linux/amd64,linux/arm64,linux/ppc64le,linux/arm/v7,linux/arm/v6
   - docker buildx use mybuilder
   - docker buildx inspect --bootstrap
 script:
   # build image
-  - docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7 -t noim/idrac6-hap .
+  - docker buildx build --platform linux/amd64,linux/arm64,linux/ppc64le,linux/arm/v7,linux/arm/v6 -t noim/idrac6-hap .
   # push image
   - >
     if [ "$TRAVIS_BRANCH" == "master" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
