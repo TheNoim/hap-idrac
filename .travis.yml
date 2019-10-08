@@ -2,13 +2,13 @@ sudo: required
 services:
   - docker
 language: bash
-addons:
-  apt:
-    packages:
-      - docker-ce
-      - docker-ce-cli
+
 before_script:
   # dependencies
+  - curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+  - sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+  - sudo apt-get update
+  - sudo apt-get -y -o Dpkg::Options::="--force-confnew" install docker-ce
   - docker --version
   - sudo pip install j2cli requests
   - wget https://github.com/riotkit-org/ci-utils/archive/master.zip -O /tmp/ci-utils.zip  # change master to a release tag only here (version)
