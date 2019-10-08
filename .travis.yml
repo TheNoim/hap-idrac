@@ -1,6 +1,13 @@
 sudo: required
 services:
   - docker
+env:
+  global:
+    - QEMU_VER=v2.9.1
+  matrix:
+    - ARCH=amd64
+    - ARCH=armhf
+    - ARCH=aarch64
 language: bash
 script:
   # prepare qemu
