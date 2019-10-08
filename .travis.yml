@@ -1,18 +1,20 @@
 services:
   - docker
-env:
-  global:
-    - QEMU_VER=v2.9.1
-  matrix:
-    - ARCH=amd64
-    - ARCH=armhf
-    - ARCH=aarch64
 language: bash
+before_script:
+  # dependencies
+  - pip install j2cli requests
+  - wget https://github.com/riotkit-org/ci-utils/archive/master.zip -O /tmp/ci-utils.zip  # change master to a release tag only here (version)
+  - curl "https://raw.githubusercontent.com/riotkit-org/ci-utils/master/ci-integration/travis.sh" -s | bash
+
+  # activate ARM builds on travis
+  - /opt/riotkit/utils/bin/setup-travis-arm-builds
+  - docker buildx create --name mybuilder
+  - docker buildx use mybuilder
+  - docker buildx inspect --bootstrap
 script:
-  # prepare qemu
-  - docker run --rm --privileged multiarch/qemu-user-static:register --reset
   # build image
-  - docker build -t noim/idrac6-hap .
+  - docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7 -t noim/idrac6-hap .
   # push image
   - >
     if [ "$TRAVIS_BRANCH" == "master" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
