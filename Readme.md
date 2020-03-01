@@ -1,3 +1,7 @@
+<p align="center">
+  <img width="460" src="https://raw.githubusercontent.com/TheNoim/hap-idrac/master/assets/readme.png">
+</p>
+
 # iDrac6 + Homekit = :fire:
 
 I always hated to go to the iDrac6 page, because it is just slow as f**k. So I always had the idea of combining homekit and idrac. This makes it much easier to start your server from mobile or look up the status. 
