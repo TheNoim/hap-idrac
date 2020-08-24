@@ -12,10 +12,10 @@ before_script:
   - docker --version
   - sudo pip install j2cli requests
   - wget https://github.com/riotkit-org/ci-utils/archive/master.zip -O /tmp/ci-utils.zip  # change master to a release tag only here (version)
-  - curl "https://raw.githubusercontent.com/riotkit-org/ci-utils/master/ci-integration/travis.sh" -s | bash
+  - pip install rkt-armutils==3.0.0
 
   # activate ARM builds on travis
-  - /opt/riotkit/utils/bin/setup-travis-arm-builds
+  - rkd :travis:configure-qemu
   - docker run --rm --privileged docker/binfmt:820fdd95a9972a5308930a2bdfb8573dd4447ad3
   - sudo systemctl restart docker
   - docker buildx create --name mybuilder --platform linux/amd64,linux/arm64,linux/arm/v7
