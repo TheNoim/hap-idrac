@@ -11,7 +11,7 @@ before_script:
   - sudo apt-get -y -o Dpkg::Options::="--force-confnew" install docker-ce
   - docker --version
   - sudo pip install j2cli requests
-  - pip install rkt-armutils==3.0.3
+  - sudo pip install rkt-armutils==3.0.3
 
   # activate ARM builds on travis
   - rkd :travis:configure-qemu
