@@ -11,7 +11,6 @@ before_script:
   - sudo apt-get -y -o Dpkg::Options::="--force-confnew" install docker-ce
   - docker --version
   - sudo pip install j2cli requests
-  - wget https://github.com/riotkit-org/ci-utils/archive/master.zip -O /tmp/ci-utils.zip  # change master to a release tag only here (version)
   - pip install rkt-armutils==3.0.0
 
   # activate ARM builds on travis
