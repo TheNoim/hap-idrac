@@ -11,10 +11,11 @@ before_script:
   - sudo apt-get -y -o Dpkg::Options::="--force-confnew" install docker-ce
   - docker --version
   - sudo pip install j2cli requests
-  - sudo pip install rkt-armutils==3.0.3
+  - wget https://github.com/riotkit-org/ci-utils/archive/a7962f25af5650d51ac94202ac80a7721df09e84.zip -O /tmp/ci-utils.zip  # change master to a release tag only here (version)
+  - curl "https://raw.githubusercontent.com/riotkit-org/ci-utils/a7962f25af5650d51ac94202ac80a7721df09e84/ci-integration/travis.sh" -s | bash
 
   # activate ARM builds on travis
-  - rkd :travis:configure-qemu
+  - /opt/riotkit/utils/bin/setup-travis-arm-builds
   - docker run --rm --privileged docker/binfmt:820fdd95a9972a5308930a2bdfb8573dd4447ad3
   - sudo systemctl restart docker
   - docker buildx create --name mybuilder --platform linux/amd64,linux/arm64,linux/arm/v7
