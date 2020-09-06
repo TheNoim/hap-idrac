@@ -278,9 +278,9 @@ fast-srp-hap@^1.0.1:
   integrity sha512-WgC3eJEaQo94pq6Ua+l4zdceMLkDXvhZ4OpyQsFdlTFDH7GwJ6fikr+C/mkKzaIxbnODkqee8cOd0KjuW2ebKQ==
 
 fast-xml-parser@^3.16.0:
-  version "3.16.0"
-  resolved "https://registry.yarnpkg.com/fast-xml-parser/-/fast-xml-parser-3.16.0.tgz#d905e7e6b28fc4648cabebcb074363867fb56ee2"
-  integrity sha512-U+bpScacfgnfNfIKlWHDu4u6rtOaCyxhblOLJ8sZPkhsjgGqdZmVPBhdOyvdMGCDt8CsAv+cssOP3NzQptNt2w==
+  version "3.17.4"
+  resolved "https://registry.yarnpkg.com/fast-xml-parser/-/fast-xml-parser-3.17.4.tgz#d668495fb3e4bbcf7970f3c24ac0019d82e76477"
+  integrity sha512-qudnQuyYBgnvzf5Lj/yxMcf4L9NcVWihXJg7CiU1L+oUCq8MUnFEfH2/nXR/W5uq+yvUN1h7z6s7vs2v1WkL1A==
 
 foreach@^2.0.5:
   version "2.0.5"
@@ -301,10 +301,15 @@ function-bind@^1.1.1:
   resolved "https://registry.yarnpkg.com/function-bind/-/function-bind-1.1.1.tgz#a56899d3ea3c9bab874bb9773b7c5ede92f4895d"
   integrity sha512-yIovAzMX49sF8Yl58fSCWJ5svSLuaibPxXQJFLmBObTuCr0Mf1KiPopGM9NiFjiYBCbfaa2Fh6breQ6ANVTI0A==
 
-graceful-fs@^4.1.15, graceful-fs@^4.1.6, graceful-fs@^4.2.0:
+graceful-fs@^4.1.15:
   version "4.2.2"
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.2.2.tgz#6f0952605d0140c1cfdb138ed005775b92d67b02"
   integrity sha512-IItsdsea19BoLC7ELy13q1iJFNmd7ofZH5+X/pJr90/nRoPEX0DJo1dHDbgtYWOhJhcCgMDTOw84RZ72q6lB+Q==
+
+graceful-fs@^4.1.6, graceful-fs@^4.2.0:
+  version "4.2.4"
+  resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.2.4.tgz#2256bde14d3632958c465ebc96dc467ca07a29fb"
+  integrity sha512-WjKPNJF79dtJAVniUlGGWHYGz2jWxT6VhN/4m1NdkbZ2nOsEF+cI1Edgql5zCRhs/VsQYRvrXctxktVXZUkixw==
 
 hap-nodejs@^0.5.6:
   version "0.5.11"
@@ -337,9 +342,9 @@ has@^1.0.3:
     function-bind "^1.1.1"
 
 idrac6@^1.0.4:
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/idrac6/-/idrac6-1.0.4.tgz#1f3c05197e112550ad8b0b01d5f909abf4c4f219"
-  integrity sha512-O5PZIoVzHvP2nmPIJBKnsdWlhhGIwVWMRMGASrCqEGegmpsO3O87sMZhk8TyUjnd56ySqVZtwZPJXD5tOoe48w==
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/idrac6/-/idrac6-1.1.1.tgz#dafdc044da00baa950df4e81dd3f701cb97b004a"
+  integrity sha512-1dEyxIfuw4w9/Tfxtbqe2Ia7+sQd5urhK8iVA35OqS+BBgMI243Kc6d6iy5IKRG4vEv/ls01c+emv8YLh44EkQ==
   dependencies:
     debug "^4.1.1"
     fast-xml-parser "^3.16.0"
@@ -557,9 +562,9 @@ multicast-dns@^7.2.2:
     thunky "^1.0.2"
 
 node-fetch@^2.6.0:
-  version "2.6.0"
-  resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.6.0.tgz#e633456386d4aa55863f676a7ab0daa8fdecb0fd"
-  integrity sha512-8dG4H5ujfvFiqDmVu9fQ5bOHUC15JMjMY/Zumv26oOvvVJjM67KF8koCWIabKQ1GJIa9r2mMZscBq/TbdOcmNA==
+  version "2.6.1"
+  resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.6.1.tgz#045bd323631f76ed2e2b55573394416b639a0052"
+  integrity sha512-V4aYg89jEoVRxRb2fJdAg8FHvI7cEyYdVAh94HH0UIK8oJxUfkjlDQN9RbMx+bEjP7+ggMiFRprSti032Oipxw==
 
 node-persist@^0.0.11:
   version "0.0.11"
